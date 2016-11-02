@@ -1,13 +1,14 @@
-var grpc = require('grpc');
+/* eslint-disable no-console */
 
-var helloProto = grpc.load('hello.proto');
+const grpc = require('grpc');
 
-var server = new grpc.Server();
+const helloProto = grpc.load('hello.proto');
+const server = new grpc.Server();
 
 server.addProtoService(helloProto.hello.HelloService.service, {
-  hello: function(call, callback) {
-    callback(null, {value: "hello"});
-  }
+  hello: (call, callback) => {
+    callback(null, { value: 'hello' });
+  },
 });
 
 server.bind('0.0.0.0:50051',
