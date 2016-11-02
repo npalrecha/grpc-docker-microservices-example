@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package world;
+
+service WorldService {
+  rpc Say (Name) returns (Name) {}
+}
+
+message Name {
+  string name = 1;
+}
+

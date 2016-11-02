@@ -1,0 +1,11 @@
+hello:
+  build: hello/.
+world:
+  build: world/.
+hello-world:
+  build: hello-world/.
+  links:
+    - hello
+    - world
+  ports:
+    - 8000:8080
