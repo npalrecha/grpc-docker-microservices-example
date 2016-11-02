@@ -28,7 +28,7 @@ server.route({
     handler: function(request, reply) {
       helloClient.hello({}, function(err, hello) {
         if (err) {
-          reply(boom.clientTimeout(err));
+          reply(boom.error(err));
         }
         worldClient.say({name: request.params.name}, function(err, name) {
           if (err) {
